@@ -16,6 +16,7 @@ function videoCard(id,d){
       <div class="videocard">
         <div class="topframe {{sectionclass}}color">{{section}}</div>
         <p>{{asset title}}</p>
+        <p>{{datetime}}</p>
         <p>{{video name}}</p>
         <p>Time spent: {{time spent}}</p>
       </div>
@@ -30,6 +31,8 @@ function videoCard(id,d){
   html = html.replace('{{asset title}}',d['asset group']);
   html = html.replace('{{video name}}',d['video'].split('.').join(' .'));
   html = html.replace('{{time spent}}',time);
+  html = html.replace('{{datetime}}',d['date']);
+  console.log(d);
 
   return html;
 }
